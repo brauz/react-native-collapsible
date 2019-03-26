@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import { View, TouchableHighlight } from 'react-native';
+import { View, TouchableOpacity } from 'react-native';
 import Collapsible from './Collapsible';
 import { ViewPropTypes } from './config';
 
@@ -34,7 +34,7 @@ export default class Accordion extends Component {
     disabled: false,
     expandFromBottom: false,
     expandMultiple: false,
-    touchableComponent: TouchableHighlight,
+    touchableComponent: TouchableOpacity,
     renderSectionTitle: () => null,
     onAnimationEnd: () => null,
     sectionContainerStyle: {},
@@ -105,7 +105,6 @@ export default class Accordion extends Component {
 
             <Touchable
               onPress={() => this._toggleSection(key)}
-              underlayColor={underlayColor}
               {...touchableProps}
             >
               {renderHeader(
